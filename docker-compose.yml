@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+
+  caddy:
+    image: caddy:2.6.4-alpine
+    volumes:
+      - "./docker/caddy/Caddyfile:/etc/caddy/Caddyfile"
+      - "./client/dist:/usr/src/app"
+      - "./docker/caddy/data:/data"
+      - "./docker/caddy/config:/config"
+    networks:
+      antonio_code_challenge_test:  
+    ports:
+      - 8989:80
+
+networks:
+  antonio_code_challenge_test:
+    driver: bridge

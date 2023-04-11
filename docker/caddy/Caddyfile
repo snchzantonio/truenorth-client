@@ -1,0 +1,5 @@
+# truenorth.960572669.xyz:443
+:8989 {
+    root * /usr/src/app
+    file_server
+}
